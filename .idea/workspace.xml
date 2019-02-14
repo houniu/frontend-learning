@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="55236c1c-0454-4d27-9236-835791e1266d" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.editorconfig" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/jsonp.js" afterDir="false" />
-    </list>
+    <list default="true" id="55236c1c-0454-4d27-9236-835791e1266d" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
     <ignored path="$PROJECT_DIR$/tmp/" />
@@ -109,12 +105,12 @@
       <option name="presentableId" value="Default" />
       <updated>1550041326107</updated>
       <workItem from="1550041327486" duration="877000" />
-      <workItem from="1550044097064" duration="1437000" />
+      <workItem from="1550044097064" duration="1625000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="2314000" />
+    <option name="totallyTimeSpent" value="2502000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -127,7 +123,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="75" y="23" width="1605" height="974" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.25" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
