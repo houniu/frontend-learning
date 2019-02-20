@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge,chrome=1"/>
+  <%console.log('test', htmlWebpackPlugin.options.meta)%>
+  <%_.forIn(htmlWebpackPlugin.options.meta, function(value, key){%>
+  <meta name="<%= key %>" content="<%= value %>">
+  <%})%>
+  <title>闪购运营商品管理</title>
+  <!-- 灵犀v4.0通道配置 -->
+  <!--<meta name="lx:category" content="waimai_e">-->
+  <!--<link rel="dns-prefetch" href="//analytics.meituan.net"/>-->
+  <!--<link rel="stylesheet" href="//xs01.meituan.net/wmcdn/kangarooui-vue/2.19.0/css/kangarooui-m.css" />-->
+  <!--<link rel="stylesheet" href="//xs01.meituan.net/wmcdn/kangarooui-vue/2.19.0/fonts/fontawesome-webfont.woff?v=4.4.0"/>-->
+  <%_.forEach(htmlWebpackPlugin.files.css, function(link){%>
+  <link href="<%= link %>" rel="stylesheet">
+  <%})%>
+</head>
+
+<body>
+<div id="app">
+  <app></app>
+</div>
+<script type="text/javascript" src="<%= htmlWebpackPlugin.files.js[0] %>"></script>
+<script type="text/javascript" src="https://xs01.meituan.net/wmcdn/vue/2.2.6-fix-insertBefore/vue.min.js"></script>
+<script type="text/javascript" src="https://xs01.meituan.net/wmcdn/kangarooui-vue/2.19.0/js/kangarooui-vue-m.js"></script>
+<%_.forEach(htmlWebpackPlugin.files.js, function(link, index){%>
+<%if (index > 0) {%>
+<script type="text/javascript" src="<%= link %>"></script>
+<%}%>
+<%})%>
+</body>
+
+</html>
