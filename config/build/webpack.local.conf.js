@@ -65,14 +65,15 @@ module.exports = merge(base, {
     //     return next();
     //   });
     // },
-    // proxy: {
-    //   '/category_template': {
-    //     // target: 'https://easymock.sankuai.com/mock/5bc6e36d1439ef395b4dd399',
-    //     target: 'http://eproductapi.sc.waimai.dev.sankuai.com',
-    //     // target: 'http://127.0.0.1:8420',
-    //     changeOrigin: true,
-    //     secure: false,
-    //   },
-    // },
+    proxy: {
+      '/api': {
+        // target: 'https://easymock.sankuai.com/mock/5bc6e36d1439ef395b4dd399',
+        // target: 'http://eproductapi.sc.waimai.dev.sankuai.com',
+        target: 'https://www.easy-mock.com/mock/5c6fd8f0a0b64b7d17824b09/app',
+        // target: 'http://127.0.0.1:8420',
+        changeOrigin: true,
+        secure: false,
+      },
+    },
   },
 });
