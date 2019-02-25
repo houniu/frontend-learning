@@ -1,6 +1,7 @@
 import Vue from 'vue';
 
 const toString = Object.prototype.toString;
+
 function isDate(value) {
   return toString.call(value) === '[object Date]';
 }
@@ -24,10 +25,10 @@ const formatMap = {
 const replaceToken = /y{4}|Y{4}|M{1,2}|d{1,2}|D{1,2}|H{1,2}|m{1,2}|s{1,2}/g;
 
 /**
- * value为unix时间戳（10位）
+ * value为后端unix时间戳（10位）
  */
 export default Vue.filter('date', function(value, format) {
-  if (value == null) {
+  if (value === null) {
     return null;
   }
   const date = isDate(value) ? value : new Date(value * 1000);

@@ -84,7 +84,7 @@ module.exports = merge(base, {
       )
       .map(({ entryName, templateFile }) => {
         return new HtmlWebpackPlugin({
-          filename: 'tpls/' + entryName + '/index.ftl',
+          filename: 'tpls/' + entryName + '/index.html',
           chunks: ['polyfill', 'common', entryName],
           meta: {
             pageModel: "${pageModel!''}",
