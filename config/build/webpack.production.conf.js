@@ -15,8 +15,7 @@ module.exports = merge(base, {
   mode: 'production',
   output: {
     path: path.resolve(PROJECT_DIR, './build/'),
-    publicPath:
-      'https://s3plus.meituan.net/v1/mss_e2821d7f0cfe4ac1bf9202ecf9590e67/cdn-prod/file:c0c2a706/',
+    publicPath: './',
     filename: '[name].[hash:8].js',
   },
   devtool: false,

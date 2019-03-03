@@ -50,6 +50,7 @@ module.exports = {
           path.join(__dirname, './config/**/*.js'),
           '**/*.test.js',
           '**/*.spec.js',
+          './index.js',
         ],
       },
     ],

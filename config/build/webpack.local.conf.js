@@ -40,6 +40,9 @@ module.exports = merge(base, {
       }),
   ],
   devServer: {
+    headers: {
+      'X-Custom-Foo': 'bar',
+    },
     port: 9001,
     open: true,
     inline: true,

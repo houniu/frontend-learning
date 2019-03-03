@@ -29,7 +29,7 @@ const webpackConfig = {
     alias: {
       '@': path.resolve(PROJECT_DIR, './src'),
     },
-    extensions: ['.js', '.jsx', '.vue'],
+    extensions: ['.ts', '.js', '.vue', '.jsx', 'json'],
   },
   externals: {
     // react: 'React',
@@ -55,6 +55,18 @@ const webpackConfig = {
         test: /\.jsx?$/,
         use: 'happypack/loader?id=js',
         include: path.join(PROJECT_DIR, 'src'),
+      },
+      {
+        test: /\.ts(x)?$/,
+        use: [
+          {
+            loader: 'ts-loader',
+            options: {
+              appendTsSuffixTo: [/\.vue$/],
+            },
+          },
+        ],
+        exclude: /node_modules/,
       },
       {
         test: /\.styl(us)?$/,
