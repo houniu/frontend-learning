@@ -88,3 +88,20 @@ Function.prototype.myBind = function(context) {
     return _this.apply(context, args.concat(...arguments));
   };
 };
+
+/**
+ * 打印数组每一项
+ * params Array
+ */
+
+export const logArrItem = (arr = [], wait) => {
+  let len = 0;
+  while (len < arr.length) {
+    (function(index) {
+      setTimeout(() => {
+        // console.log(arr[index])
+      }, wait * (index + 1));
+    })(len);
+    ++len;
+  }
+};

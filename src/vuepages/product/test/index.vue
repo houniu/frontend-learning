@@ -18,9 +18,7 @@
       return {}
     },
     methods: {},
-    created() {
-      log('created');
-    },
+    created() {},
     mounted() {
       log('mounted');
     }
