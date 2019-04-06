@@ -5,6 +5,7 @@
  *
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/
  *
+ * @description:
  * 给定一个字符串，请你找出其中不含有重复字符的 最长子串 的长度
  *
  * 示例1:
@@ -29,7 +30,7 @@
  * @return {number}
  */
 // 时间复杂度: O(n) - One-pass Hash Table
-const lengthOfLongestSubstring = s => {
+export const lengthOfLongestSubstring = s => {
   if (!s.length) return 0;
   if (s.length === 1) return 1;
   let arr = [],
