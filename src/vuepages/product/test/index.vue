@@ -8,7 +8,10 @@
 
 <script>
   import vueMarquee from '@/vuepages/components/vue-marquee'
+  import { convertArr } from '@/common/utils'
+
   const { log } = console;
+
   export default {
     name: "index",
     components: {
@@ -21,6 +24,7 @@
     created() {},
     mounted() {
       log('mounted');
+      log(convertArr([1,2,34,[45,56,[123]]]));
     }
   };
 </script>

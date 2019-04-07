@@ -1,8 +1,22 @@
 import isPlainObject from 'lodash/isPlainObject';
 
+const toString = Object.prototype.toString;
+
 export const isString = str => typeof str === 'string';
 
 export const isNumber = val => typeof val === 'number';
+
+export const isArray = arr => {
+  try {
+    if (Array.isArray) {
+      return Array.isArray(arr);
+    } else {
+      return toString.call(arr) === '[object Array]';
+    }
+  } catch (err) {
+    return false;
+  }
+};
 
 /**
  * JSON字符串反序列化
@@ -93,7 +107,6 @@ Function.prototype.myBind = function(context) {
  * 打印数组每一项
  * params Array
  */
-
 export const logArrItem = (arr = [], wait) => {
   let len = 0;
   while (len < arr.length) {
@@ -105,3 +118,22 @@ export const logArrItem = (arr = [], wait) => {
     ++len;
   }
 };
+
+/**
+ * 多维数组转换一维数组
+ * @param array
+ * @return {Array}
+ */
+export const convertArr = arr => {
+  if (!isArray(arr))
+    throw new TypeError('Cannot convert first argument to Array');
+  return (arr.toString() || '').split(',').map(item => +item);
+};
+/**
+ * 深度合并对象
+ * @params object
+ * @return {Object}
+ */
+// export const deepObjectMerge = (firstObject, secondObject) => {
+//
+// }

@@ -28,6 +28,7 @@ const webpackConfig = {
   resolve: {
     alias: {
       '@': path.resolve(PROJECT_DIR, './src'),
+      '@leetcode': path.resolve(PROJECT_DIR, './leetcode'),
     },
     extensions: ['.ts', '.js', '.vue', '.jsx', 'json'],
   },
