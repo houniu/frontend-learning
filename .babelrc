@@ -13,7 +13,7 @@
             "Firefox > 40"
           ]
         },
-        "useBuiltIns": "usage"
+        "useBuiltIns": false,
       }
     ]
   ],

@@ -7,6 +7,7 @@
 </template>
 
 <script>
+  import Cookie from 'js-cookie'
   import vueMarquee from '@/vuepages/components/vue-marquee'
   import { convertArr } from '@/common/utils'
 
@@ -25,6 +26,7 @@
     mounted() {
       log('mounted');
       log(convertArr([1,2,34,[45,56,[123]]]));
+      Cookie.set('access-token', 'token', { expires: 7, domain: 'tv.sohu.com' });
     }
   };
 </script>

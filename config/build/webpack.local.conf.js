@@ -40,6 +40,7 @@ module.exports = merge(base, {
       }),
   ],
   devServer: {
+    disableHostCheck: true,
     headers: {
       'X-Custom-Foo': 'bar',
     },

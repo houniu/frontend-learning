@@ -2,8 +2,9 @@ const path = require('path');
 // const webpack = require('webpack');
 const merge = require('webpack-merge');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
+// const ScriptExtHtmlWebpackPlugin = require("script-ext-html-webpack-plugin");
 const CleanWebpackPlugin = require('clean-webpack-plugin');
-const UglifyJsPlugin = require('uglifyjs-webpack-plugin');
+const TerserPlugin = require('terser-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCSSAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const base = require('./webpack.base.conf');
@@ -16,7 +17,7 @@ module.exports = merge(base, {
   output: {
     path: path.resolve(PROJECT_DIR, './build/'),
     publicPath: './',
-    filename: '[name].[hash:8].js',
+    filename: '[name].[chunkhash:8].js',
   },
   devtool: false,
   optimization: {
@@ -24,14 +25,18 @@ module.exports = merge(base, {
       chunks: 'initial',
       cacheGroups: {
         common: {
+          chunks: 'all',
           test: /[\\/]node_modules[\\/]/,
           name: 'common',
-          chunks: 'all',
         },
       },
     },
+    // runtimeChunk: true;
+    runtimeChunk: {
+      name: entrypoint => `runtime~${entrypoint.name}`,
+    },
     minimizer: [
-      new UglifyJsPlugin({
+      new TerserPlugin({
         cache: false,
         parallel: true,
         sourceMap: true, // set to true if you want JS source maps

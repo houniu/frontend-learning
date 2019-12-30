@@ -54,7 +54,7 @@ const webpackConfig = {
       },
       {
         test: /\.jsx?$/,
-        use: 'happypack/loader?id=js',
+        use: ['cache-loader', 'happypack/loader?id=js'],
         include: path.join(PROJECT_DIR, 'src'),
       },
       {
@@ -83,8 +83,8 @@ const webpackConfig = {
               ident: 'postcss',
               plugins: [
                 AutoPrefixer({
-                  browsers: ['ie >= 9', 'last 2 versions'],
-                }),
+                  overrideBrowserslist: ['ie >= 9', 'last 2 versions'],
+                }), // 自动添加css前缀
               ],
             },
           },
@@ -132,8 +132,8 @@ const webpackConfig = {
               ident: 'postcss',
               plugins: [
                 AutoPrefixer({
-                  browsers: ['ie >= 9', 'last 2 versions'],
-                }),
+                  overrideBrowserslist: ['ie >= 9', 'last 2 versions'],
+                }), // 自动添加css前缀
               ],
             },
           },
@@ -186,8 +186,8 @@ const webpackConfig = {
               ident: 'postcss',
               plugins: [
                 AutoPrefixer({
-                  browsers: ['ie >= 9', 'last 2 versions'],
-                }),
+                  overrideBrowserslist: ['ie >= 9', 'last 2 versions'],
+                }), // 自动添加css前缀
               ],
             },
           },
