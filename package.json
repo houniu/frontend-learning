@@ -14,7 +14,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/houniu/frontend-learning.git"
+    "url": "git+https://github.com/rdlei/frontend-learning.git"
   },
   "keywords": [
     "Vue"
@@ -38,12 +38,12 @@
       "jest"
     ]
   },
-  "author": "rdSehunnnie",
+  "author": "rdlei",
   "license": "UNLICENSED",
   "bugs": {
-    "url": "https://github.com/houniu/frontend-learning/issues"
+    "url": "https://github.com/rdlei/frontend-learning/issues"
   },
-  "homepage": "https://github.com/houniu/frontend-learning#readme",
+  "homepage": "https://github.com/rdlei/frontend-learning#readme",
   "dependencies": {
     "antd": "^3.13.5",
     "art-template": "^4.13.2",
