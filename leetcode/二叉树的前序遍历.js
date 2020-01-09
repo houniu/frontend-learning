@@ -13,7 +13,7 @@ export const preorderTraversalRecursion = root => {
   return res;
 };
 
-// 非递归
+// 非递归【迭代算法】
 /**
  * 核心思想：根据栈的特点:先进的后出
  */
