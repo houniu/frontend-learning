@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+
+<!-- <body>
+    <div id="app">
+        <p id="name"></p>
+    </div>
+</body> -->
+
+<body>
+    <div id="app">
+        <!-- 插值绑定 -->
+        <p>{{name}}</p>
+        <!-- 指令解析 -->
+        <p k-text="name"></p>
+        <p>{{age}}</p>
+        <p>
+            {{doubleAge}}
+        </p>
+        <!-- 双向数据绑定 -->
+        <input type="text" k-model="name" />
+        <!-- 事件处理 -->
+        <button @click="changeName">呵呵</button>
+        <!-- html内容解析 -->
+        <div k-html="html"></div>
+    </div>
+    <script type="text/javascript" src='./compile.js'></script>
+    <script type="text/javascript" src='./vue的响应式原理及实现双向数据绑定.js'></script>
+    <script>
+        // debugger;
+        let kaikeba = new KVue({
+            el:'#app',
+            data: {
+                name: "I am test.",
+                age: 12,
+                html: '<button>这是一个按钮</button>'
+            },
+            created() {
+                console.log('开始啦');
+                setTimeout(()=>{
+                    this.name='我是蜗牛'
+                }, 1500) 
+            },
+            methods:{
+                changeName() {
+                    this.name = '哈喽，开课吧';
+                    this.age = 1;
+                    this.id = 'xx'; 
+                    console.log(1,this)
+                },
+            },
+        });
+    </script>
+</body>
+
+<!-- <script type="text/javascript" src="./vue实现双向数据绑定.js"></script> -->
+<script>
+    // let testObj = {},
+    //     key = 'name'
+    // Object.defineProperty(testObj, key, {
+    //     get() {
+    //         return document.querySelector('#name').innerHTML;
+    //     },
+    //     set(newVal) {
+    //         document.querySelector('#name').innerHTML = newVal;
+    //     },
+    // })
+
+    // testObj[key] = 'Jerry';
+
+    // const app = new NVue({
+    //     data: {
+    //         test: 'I am test',
+    //         foo: {
+    //             bar: 'bar',
+    //         },
+    //     }
+    // })
+
+    // app.$data.test = 'hello, NVue!';
+    // app.$data.foo.bar = 'oh my bar';
+</script>
+</html>
