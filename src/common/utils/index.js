@@ -93,7 +93,11 @@ export const cloneDeep = obj => {
 };
 
 Function.prototype.myBind = function(context) {
-  if (typeof this !== 'function') throw new TypeError('不是函数');
+  if (typeof this !== 'function')
+    throw new TypeError(
+      'Function.prototype.bind - what is trying to be bound is not callable'
+    );
+  if (this === Function.prototype) throw new TypeError('error');
   // 保存this
   const _this = this;
   const args = [...arguments].slice(1);
@@ -102,6 +106,33 @@ Function.prototype.myBind = function(context) {
     return _this.apply(context, args.concat(...arguments));
   };
 };
+
+~(function() {
+  function myCall(context, ...args) {
+    if (this === Function.prototype) {
+      return undefined; // 用于防止 Function.prototype.myCall() 直接调用
+    }
+
+    context = context || window;
+    let type = typeof context;
+    // debugger;
+    if (!/^(object|function)$/.test(type)) {
+      if (/^(symbol|bigint)$/.test(type)) {
+        context = Object(context);
+      } else {
+        context = new context.constructor(context);
+      }
+    }
+    let key = Symbol('key'),
+      result;
+    context[key] = this;
+    result = context[key](...args);
+    delete context[key];
+    return result;
+  }
+
+  Function.prototype.myCall = myCall;
+})();
 
 /**
  * 打印数组每一项
