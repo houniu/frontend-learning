@@ -1,11 +1,12 @@
 <template lang="html">
   <div class="test-wrap">
-    <div class="marquee-wrap"><vue-marquee content="222222222" class="two" showtwo="false"></vue-marquee></div>
+    <!-- <div class="marquee-wrap"><vue-marquee content="222222222" class="two" showtwo="false"></vue-marquee></div>
     <div class="marquee-wrap"><vue-marquee content="111111111" class="two" showtwo="false"></vue-marquee></div>
-    <div class="marquee-wrap"><vue-marquee content="333333333" class="two" showtwo="false" speed="quick" ></vue-marquee></div>
+    <div class="marquee-wrap"><vue-marquee content="333333333" class="two" showtwo="false" speed="quick" ></vue-marquee></div> -->
     <div class="test-center">
       <div class="test-center__father">
-        <div class="test-center__son"></div>
+        <div class="test-center__son">helloWord</div>
+        <van-search></van-search>
       </div>
     </div>
   </div>
@@ -15,6 +16,7 @@
   import Cookie from 'js-cookie'
   import vueMarquee from '@/vuepages/components/vue-marquee'
   import { convertArr } from '@/common/utils'
+  import { Search } from 'vant'
 
   const { log } = console;
 
@@ -22,6 +24,7 @@
     name: "index",
     components: {
       vueMarquee,
+      [Search.name]: Search
     },
     data() {
       return {}

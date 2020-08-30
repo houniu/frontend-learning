@@ -22,13 +22,11 @@
     ["@babel/plugin-proposal-decorators", { "legacy": true }],
     ["@babel/plugin-proposal-class-properties", { "loose": true }],
     "@babel/plugin-proposal-object-rest-spread",
-    [
-      "import",
-      {
-        "libraryName": "antd",
-        "style": true
-      }
-    ],
+    ["import", {
+      "libraryName": "vant",
+      "libraryDirectory": "es",
+      "style": true
+    }],
     "lodash"
   ]
 }
