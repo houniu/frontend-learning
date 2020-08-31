@@ -13,7 +13,7 @@
             "Firefox > 40"
           ]
         },
-        "useBuiltIns": false,
+        "useBuiltIns": false
       }
     ]
   ],
@@ -23,7 +23,7 @@
     ["@babel/plugin-proposal-class-properties", { "loose": true }],
     "@babel/plugin-proposal-object-rest-spread",
     ["import", {
-      "libraryName": "vant",
+      "libraryName": "ant-design-vue",
       "libraryDirectory": "es",
       "style": true
     }],
