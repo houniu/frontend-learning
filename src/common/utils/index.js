@@ -245,3 +245,62 @@ export const myInstanceof = (left, right) => {
     left = left.__proto__;
   }
 };
+
+/**
+ * 去重【开辟一个外部存储空间用于标示元素是否出现过】
+ * @param {*} array
+ */
+export const unique = array => {
+  const container = {};
+  return array.filter(item =>
+    container.hasOwnProperty(item) ? false : (container[item] = true)
+  );
+};
+
+/**
+ * javascript 不使用循环，创建一个长度为count的数组，且数组的每一项都为str
+ * @param {*} count
+ * @param {*} str
+ */
+export const createArr = (count, str) => {
+  const arr = new Array();
+
+  const addEle = (num, str) => {
+    if (num !== 0) {
+      arr.push(str);
+      num--;
+      addEle(num, str);
+    }
+  };
+  addEle(count, str);
+
+  return arr;
+};
+
+export const once = fn => {
+  if (Object.prototype.toString.call(fn) !== '[object Function]') {
+    throw new TypeError('fn must be a function');
+  }
+  let count = 0;
+  return function() {
+    count++;
+    if (count === 1) {
+      return fn.apply(this, [...arguments]);
+    }
+  };
+};
+
+export const strFormat = (str = '', divider) => {
+  let arr = str
+    .toString()
+    .split('')
+    .reverse();
+  let res = [];
+  for (var i = 0, len = arr.length; i < len; i++) {
+    if (i % 3 === 0 && i !== 0) {
+      res.push(divider);
+    }
+    res.push(arr[i]);
+  }
+  return res.length && res.reverse().join('');
+};
