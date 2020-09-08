@@ -41,3 +41,16 @@ export const jsonStrConvertArr = arr =>
     .replace(/(\[|\])/g, '')
     .split(divider)
     .map(val => parseFloat(val));
+
+/**
+ * 使用数组的reduce实现数组的扁平化
+ * @param {*} arr
+ */
+export const flatten = arr =>
+  arr.reduce(
+    (target, current) =>
+      Array.isArray(current)
+        ? target.concat(flatten(current))
+        : target.concat(current),
+    new Array()
+  );

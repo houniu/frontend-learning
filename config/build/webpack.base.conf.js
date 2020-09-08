@@ -19,6 +19,7 @@ const happyThreadPool = HappyPack.ThreadPool({
 const PROJECT_DIR = path.join(__dirname, '../../');
 
 const webpackConfig = {
+  context: process.cwd(),
   mode: 'production',
   entry: {
     polyfill: '@babel/polyfill',

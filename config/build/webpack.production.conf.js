@@ -19,7 +19,7 @@ module.exports = merge(base, {
     publicPath: './',
     filename: '[name].[chunkhash:8].js',
   },
-  devtool: false,
+  devtool: false, // 不生成 sourcemap
   optimization: {
     splitChunks: {
       chunks: 'initial',
