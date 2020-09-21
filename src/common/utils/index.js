@@ -156,6 +156,22 @@ export const cloneDeep = obj => {
   Function.prototype.myApply = myApply;
 })();
 
+(function() {
+  Object.prototype[Symbol.iterator] = function() {
+    let _this = this;
+    const keys = Object.keys(_this); // keys = Object.getOwnPropertyNames(this);
+    let index = 0;
+    return {
+      next: () => {
+        return {
+          value: this[keys[index++]], // 每次迭代的结果
+          done: index > keys.length, // 迭代结束标识 done为true时候遍历结束
+        };
+      },
+    };
+  };
+})();
+
 Function.prototype.myBind = function(context) {
   if (typeof this !== 'function')
     throw new TypeError(
