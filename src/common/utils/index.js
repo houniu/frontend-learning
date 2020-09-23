@@ -156,6 +156,9 @@ export const cloneDeep = obj => {
   Function.prototype.myApply = myApply;
 })();
 
+/**
+ * JS 中让对象支持 for of 遍历以及迭代器
+ */
 (function() {
   Object.prototype[Symbol.iterator] = function() {
     let _this = this;
@@ -164,7 +167,7 @@ export const cloneDeep = obj => {
     return {
       next: () => {
         return {
-          value: this[keys[index++]], // 每次迭代的结果
+          value: _this[keys[index++]], // 每次迭代的结果
           done: index > keys.length, // 迭代结束标识 done为true时候遍历结束
         };
       },
@@ -189,6 +192,31 @@ Function.prototype.myBind = function(context) {
     }
     return _this.apply(context, args.concat(...arguments));
   };
+};
+
+/**
+ * es6使用reduce实现map
+ */
+~(function() {
+  Array.prototype.reduceToMap = function(handler) {
+    return this.reduce((target, current, index) => {
+      target.push(handler.call(this, current, index));
+      return target;
+    }, []);
+  };
+})();
+
+/**
+ * es6使用reduce实现filter
+ */
+Array.prototype.reduceToFilter = function(handler) {
+  return this.reduce((target, current, index) => {
+    let result = handler.call(this, current, index);
+    if (result) {
+      target.push(current);
+    }
+    return target;
+  }, []);
 };
 
 /**
