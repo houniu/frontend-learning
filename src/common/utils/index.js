@@ -348,3 +348,35 @@ export const strFormat = (str = '', divider) => {
   }
   return res.length && res.reverse().join('');
 };
+
+/**
+ * 将数字格式化成每 3 位添加一个逗号
+ * @param {Number} money 待格式化的金额
+ * @return {String} 返回格式化后的数字
+ */
+export const $wFormatBoth = num => {
+  return num.toString().replace(/(\d)(?=(?:\d{3})+$)/g, '$1,');
+};
+
+export const toThousands = (num, decollator = ',') => {
+  // '1234,567'
+  const numArr = (num || 0).toString().split('.');
+  let result = '',
+    otherNum = '';
+  if (numArr.length === 2) {
+    otherNum = numArr[1];
+  }
+  num = numArr[0];
+  while (num.length > 3) {
+    result = decollator + num.slice(-3) + result;
+    // result += decollator + num.slice(-3);
+    num = num.slice(0, num.length - 3);
+  }
+  if (num) {
+    result = num + result;
+  }
+  if (otherNum) {
+    result += '.' + otherNum;
+  }
+  return result;
+};
