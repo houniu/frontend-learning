@@ -2,6 +2,24 @@ import isPlainObject from 'lodash/isPlainObject';
 
 const toString = Object.prototype.toString;
 
+/**
+ * @function 类型检测：type
+ * @param {Any} target
+ * @param {String} type 对比类型，可不传。有参数返回值为对比后的Boolean，无参数返回值为实际的数据类型
+ * @returns {Boolean|String}
+ */
+export const type = (target, type) => {
+  let matchTargetType = '';
+  let matchArr = Object.prototype.toString
+    .call(target)
+    .toLowerCase()
+    .match(/\[object (\S*)\]/);
+  if (matchArr && matchArr.length) {
+    matchTargetType = matchArr[1];
+  }
+  return type === undefined ? matchTargetType : matchTargetType === type;
+};
+
 export const isString = str => typeof str === 'string';
 
 export const isNumber = val => typeof val === 'number';
