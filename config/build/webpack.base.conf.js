@@ -81,12 +81,14 @@ const webpackConfig = {
           {
             loader: 'postcss-loader',
             options: {
-              ident: 'postcss',
-              plugins: [
-                AutoPrefixer({
-                  overrideBrowserslist: ['ie >= 9', 'last 2 versions'],
-                }), // 自动添加css前缀
-              ],
+              postcssOptions: {
+                ident: 'postcss',
+                plugins: [
+                  AutoPrefixer({
+                    overrideBrowserslist: ['ie >= 9', 'last 2 versions'],
+                  }), // 自动添加css前缀
+                ],
+              },
             },
           },
           'stylus-loader',
@@ -130,18 +132,22 @@ const webpackConfig = {
           {
             loader: 'postcss-loader',
             options: {
-              ident: 'postcss',
-              plugins: [
-                AutoPrefixer({
-                  overrideBrowserslist: ['ie >= 9', 'last 2 versions'],
-                }), // 自动添加css前缀
-              ],
+              postcssOptions: {
+                ident: 'postcss',
+                plugins: [
+                  AutoPrefixer({
+                    overrideBrowserslist: ['ie >= 9', 'last 2 versions'],
+                  }), // 自动添加css前缀
+                ],
+              },
             },
           },
           {
             loader: 'less-loader',
             options: {
-              javascriptEnabled: true,
+              lessOptions: {
+                javascriptEnabled: true,
+              },
             },
           },
         ],
@@ -184,12 +190,14 @@ const webpackConfig = {
           {
             loader: 'postcss-loader',
             options: {
-              ident: 'postcss',
-              plugins: [
-                AutoPrefixer({
-                  overrideBrowserslist: ['ie >= 9', 'last 2 versions'],
-                }), // 自动添加css前缀
-              ],
+              postcssOptions: {
+                ident: 'postcss',
+                plugins: [
+                  AutoPrefixer({
+                    overrideBrowserslist: ['ie >= 9', 'last 2 versions'],
+                  }), // 自动添加css前缀
+                ],
+              },
             },
           },
         ],
