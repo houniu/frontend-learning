@@ -8,7 +8,7 @@
     "serve": "DEBUG=koa* NODE_ENV=production nodemon ./index.js",
     "build:local": "webpack --config ./config/build/webpack.local.conf.js",
     "build": "cross-env NODE_ENV=production webpack --config ./config/build/webpack.production.conf.js",
-    "build:analysis": "NODE_ENV=production BUILD_ANALYSIS=true webpack --config ./config/build/webpack.production.conf.js",
+    "build:analysis": "cross-env NODE_ENV=production BUILD_ANALYSIS=true webpack --config ./config/build/webpack.production.conf.js",
     "lint": "eslint src --ext .js,jsx && stylelint \"src/**/*.less\"",
     "test": "jest"
   },
