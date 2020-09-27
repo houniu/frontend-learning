@@ -7,7 +7,7 @@
     "local": "webpack-dev-server --config ./config/build/webpack.local.conf.js --watch --progress --compress",
     "serve": "DEBUG=koa* NODE_ENV=production nodemon ./index.js",
     "build:local": "webpack --config ./config/build/webpack.local.conf.js",
-    "build": "NODE_ENV=production webpack --config ./config/build/webpack.production.conf.js",
+    "build": "cross-env NODE_ENV=production webpack --config ./config/build/webpack.production.conf.js",
     "build:analysis": "NODE_ENV=production BUILD_ANALYSIS=true webpack --config ./config/build/webpack.production.conf.js",
     "lint": "eslint src --ext .js,jsx && stylelint \"src/**/*.less\"",
     "test": "jest"
@@ -79,6 +79,7 @@
     "babel-register": "^6.26.0",
     "cache-loader": "^3.0.0",
     "clean-webpack-plugin": "^1.0.1",
+    "cross-env": "^7.0.2",
     "css-loader": "^2.1.0",
     "debug": "^4.1.1",
     "eslint": "^5.14.1",
