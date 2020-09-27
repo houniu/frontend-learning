@@ -398,3 +398,24 @@ export const toThousands = (num, decollator = ',') => {
   }
   return result;
 };
+
+/**
+ * 实现异步循环打印
+ * 基于promise + async await
+ * @param {*} time
+ * @param {*} i
+ */
+export const sleep = (time, i) => {
+  return new Promise(resolve => {
+    setTimeout(() => {
+      resolve(i);
+    }, time);
+  });
+};
+export const asyncLoopPrint = async (time, length) => {
+  for (let i = 0; i < length; i++) {
+    let result = await sleep(time, i);
+    window.alert(result);
+    // console.log(result);
+  }
+};
