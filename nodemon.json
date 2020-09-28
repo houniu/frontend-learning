@@ -3,5 +3,11 @@
   "execMap": {
     "js": "node --harmony"
   },
-  "ignore": ["mock", "node_modules", "package.json", "src", "前端优秀文章"]
+  "ignore": [
+    "mock",
+    "node_modules",
+    "package.json",
+    "src",
+    "frontEndExcellentArticles"
+  ]
 }
