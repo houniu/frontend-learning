@@ -23,7 +23,6 @@ module.exports = merge(base, {
         filename: entryName + '/index.html',
         chunks: [entryName, 'polyfill'],
         template: templateFile,
-        inject: true,
       });
     }),
     ...utils
@@ -50,7 +49,7 @@ module.exports = merge(base, {
     inline: true,
     hot: true,
     historyApiFallback: {
-      rewrites: [{ from: /^\/$/, to: '/tag/template' }],
+      rewrites: [{ from: /^\/$/, to: '/eshop/seller' }],
     },
     // before: function(app) {
     //   app.use((req, res, next) => {
