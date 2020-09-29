@@ -1,11 +1,20 @@
-import React from 'react';
+import React, { PureComponent, Fragment } from 'react';
 
-class View extends React.Component {
-  componentDidMount() {}
+export default class View extends PureComponent {
+  queryList() {
+    // console.log('queryList')
+  }
+
+  componentDidMount() {
+    this.queryList();
+  }
 
   render() {
-    return <div>123456</div>;
+    return (
+      <Fragment>
+        <div>Hello</div>
+        <p>React</p>
+      </Fragment>
+    );
   }
 }
-
-export default View;
