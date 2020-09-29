@@ -1,6 +1,11 @@
 import React from 'react';
 import ReactDom from 'react-dom';
 
-export default App => {
-  ReactDom.render(<App />, document.querySelector('#app'));
-};
+export default function render(AppComponent, appId = 'app') {
+  ReactDom.render(
+    <div style={{ padding: '24px' }}>
+      <AppComponent />
+    </div>,
+    document.getElementById(appId)
+  );
+}
