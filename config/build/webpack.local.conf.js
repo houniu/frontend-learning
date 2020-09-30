@@ -18,13 +18,13 @@ module.exports = merge(base, {
   devtool: '#cheap-module-eval-source-map',
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
-    // ...utils.getPageEntryAndTemplate().map(({ entryName, templateFile }) => {
-    //   return new HtmlWebpackPlugin({
-    //     filename: entryName + '/index.html',
-    //     chunks: [entryName, 'polyfill'],
-    //     template: templateFile,
-    //   });
-    // }),
+    ...utils.getPageEntryAndTemplate().map(({ entryName, templateFile }) => {
+      return new HtmlWebpackPlugin({
+        filename: entryName + '/index.html',
+        chunks: [entryName, 'polyfill'],
+        template: templateFile,
+      });
+    }),
     ...utils
       .getPageEntryAndTemplate(
         utils.DEFAULT_VUE_PAGES_FOLDER,
@@ -49,7 +49,7 @@ module.exports = merge(base, {
     inline: true,
     hot: true,
     historyApiFallback: {
-      rewrites: [{ from: /^\/$/, to: '/tag/template' }],
+      rewrites: [{ from: /^\/$/, to: '/eshop/seller' }],
     },
     // before: function(app) {
     //   app.use((req, res, next) => {

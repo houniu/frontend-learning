@@ -39,7 +39,7 @@ module.exports = {
     },
     react: {
       pragma: 'React',
-      version: '16.5',
+      version: '16.13.1',
     },
   },
   rules: {

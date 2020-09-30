@@ -23,7 +23,7 @@ const webpackConfig = {
   mode: 'production',
   entry: {
     polyfill: '@babel/polyfill',
-    // ...utils.getPageEntries(),
+    ...utils.getPageEntries(),
     ...utils.getPageEntries(utils.DEFAULT_VUE_PAGES_FOLDER),
   },
   resolve: {
